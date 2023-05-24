@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import NewProducts from "./pages/NewProducts";
 import Carts from "./pages/Carts";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -15,9 +16,23 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/products", element: <Products /> },
-      { path: "/products/new", element: <NewProducts /> },
-      { path: "/carts", element: <Carts /> },
+      { path: "/products/:category", element: <Products /> },
+      {
+        path: "/products/new",
+        element: (
+          <ProtectedRoute required>
+            <NewProducts />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/carts",
+        element: (
+          <ProtectedRoute>
+            <Carts />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);
