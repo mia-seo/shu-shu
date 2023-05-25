@@ -21,7 +21,7 @@ export default function Navbar() {
         />
       </Link>
       <div className="flex justify-between items-center px-1 py-3">
-        <div className="flex gap-2 text-lg font-semibold">
+        <div className="flex gap-2 text-lg font-semibold md:gap-5">
           {CATEGORIES.map((el, index) => (
             <Link
               className={`${
