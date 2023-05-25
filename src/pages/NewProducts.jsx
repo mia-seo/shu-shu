@@ -18,6 +18,7 @@ export default function NewProducts() {
   };
 
   const handleSubmit = () => {
+    console.log("dmdld");
     setIsUploading(true);
     uploadCloudinary(file).then((imgUrl) => {
       const newProduct = { ...product, imgUrl };
@@ -47,10 +48,7 @@ export default function NewProducts() {
           alt={file.name}
         />
       )}
-      <form
-        className="w-full flex flex-col items-center my-5"
-        onSubmit={handleSubmit}
-      >
+      <div className="w-full flex flex-col items-center my-5">
         <input
           className="w-[80%] max-w-[600px] border border-brand px-3 py-2 my-2 rounded-md focus:outline-none"
           type="file"
@@ -71,10 +69,11 @@ export default function NewProducts() {
             required
           />
         ))}
-      </form>
+      </div>
       <Button
         text={isUploading ? "제품 등록 중..." : "제품등록하기"}
         disabled={isUploading}
+        onClick={handleSubmit}
       />
     </section>
   );
