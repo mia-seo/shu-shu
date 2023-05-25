@@ -9,11 +9,8 @@ export default function NewProducts() {
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState();
 
-  console.log(file);
-
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    console.log(value);
     if (name === "imgUrl") {
       setFile(files && files[0]);
     }
