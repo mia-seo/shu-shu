@@ -8,6 +8,7 @@ import Products from "./pages/Products";
 import NewProducts from "./pages/NewProducts";
 import Carts from "./pages/Carts";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProductDetail from "./pages/ProductDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             <NewProducts />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "/product/:productId",
+        element: <ProductDetail />,
       },
       {
         path: "/carts",
