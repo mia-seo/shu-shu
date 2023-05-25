@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsFillCartFill, BsPencilFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useUser } from "../context/userContext";
@@ -7,6 +7,9 @@ import User from "./User";
 
 export default function Navbar() {
   const { user, signin, signout } = useUser();
+  const [clicked, setClicked] = useState("products");
+
+  const handleClick = (name) => setClicked(name);
 
   return (
     <nav>
@@ -21,8 +24,11 @@ export default function Navbar() {
         <div className="flex gap-2 text-lg font-semibold">
           {CATEGORIES.map((el, index) => (
             <Link
-              className="capitalize hover:text-accent transition-all duration-150"
+              className={`${
+                el === clicked ? "text-brand border-b-2 border-brand" : ""
+              } capitalize hover:text-brand transition-all duration-150`}
               key={index}
+              onClick={() => handleClick(el)}
               to={`/products/${el}`}
             >
               {el}
@@ -32,7 +38,7 @@ export default function Navbar() {
         <div className="flex items-center gap-5 text-xl">
           {user && (
             <Link
-              className="hover:text-accent transition-all duration-150"
+              className="hover:text-brand transition-all duration-150"
               to="/carts"
             >
               <BsFillCartFill />
@@ -40,7 +46,7 @@ export default function Navbar() {
           )}
           {user && user.isAdmin && (
             <Link
-              className="hover:text-accent transition-all duration-150"
+              className="hover:text-brand transition-all duration-150"
               to="/products/new"
             >
               <BsPencilFill />
