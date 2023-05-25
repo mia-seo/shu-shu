@@ -33,3 +33,7 @@ function filterProducts(category, products) {
     }
   }
 }
+
+export async function setCartItem(uid, product) {
+  return set(ref(database, `carts/${uid}/${product.id}`), product);
+}
