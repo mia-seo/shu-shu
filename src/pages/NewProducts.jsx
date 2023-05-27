@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { setNewProduct } from "../api/database";
 import { uploadCloudinary } from "../api/uploadCloudinary";
 import Button from "../components/ui/Button";
+import { useProducts } from "../hooks/useProducts";
 
 export default function NewProducts() {
   const [file, setFile] = useState();
   const [product, setProduct] = useState(initialValue);
   const [isUploading, setIsUploading] = useState(false);
   const [success, setSuccess] = useState();
+  const { addProduct } = useProducts();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -18,23 +20,24 @@ export default function NewProducts() {
   };
 
   const handleSubmit = () => {
-    console.log("dmdld");
     setIsUploading(true);
-    uploadCloudinary(file).then((imgUrl) => {
-      const newProduct = { ...product, imgUrl };
-      setNewProduct(newProduct)
-        .then(() => {
-          setProduct(initialValue);
-          setFile(null);
-          setSuccess("✅ 성공적으로 제품을 등록했습니다!");
-          setTimeout(() => {
-            setSuccess(null);
-          }, 3000);
-        })
-        .finally(() => {
-          setIsUploading(false);
+    uploadCloudinary(file)
+      .then((imgUrl) => {
+        const newProduct = { ...product, imgUrl };
+        addProduct.mutate(newProduct, {
+          onSuccess: () => {
+            setProduct(initialValue);
+            setFile(null);
+            setSuccess("✅ 성공적으로 제품을 등록했습니다!");
+            setTimeout(() => {
+              setSuccess(null);
+            }, 3000);
+          },
         });
-    });
+      })
+      .finally(() => {
+        setIsUploading(false);
+      });
   };
 
   return (
@@ -43,14 +46,14 @@ export default function NewProducts() {
       {success && <p>{success}</p>}
       {file && (
         <img
-          className="w-[300px] rounded-lg"
+          className="w-[300px] aspect-[1/1] rounded-lg"
           src={URL.createObjectURL(file)}
           alt={file.name}
         />
       )}
-      <div className="w-full flex flex-col items-center my-5">
+      <div className="w-full flex flex-col items-center my-5 gap-5">
         <input
-          className="w-[80%] max-w-[600px] border border-brand px-3 py-2 my-2 rounded-md focus:outline-none"
+          className="file-input file-input-bordered w-full max-w-xl"
           type="file"
           name="imgUrl"
           accept="image/*"
@@ -59,7 +62,7 @@ export default function NewProducts() {
         />
         {INPUTS.map(({ name, placeholder, type }) => (
           <input
-            className="w-[80%] max-w-[600px] border border-brand px-3 py-2 my-2 rounded-md focus:outline-none"
+            className="input input-bordered w-full max-w-xl"
             key={name}
             name={name}
             placeholder={placeholder}

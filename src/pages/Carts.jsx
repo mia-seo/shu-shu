@@ -1,17 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
-import { getCarts } from "../api/database";
 import CartItem from "../components/CartItem";
 import Counter from "../components/Counter";
 import { useUser } from "../context/userContext";
+import { useCarts } from "../hooks/useCarts";
 
 export default function Carts() {
   const { uid } = useUser();
   const {
-    isLoading,
-    error,
-    data: products,
-  } = useQuery(["carts"], () => getCarts(uid));
+    getCartsQuery: { isLoading, error, data: products },
+  } = useCarts(uid);
 
   const [total, setTotal] = useState(
     products && products.map((el) => el.price).reduce((a, b) => a + b)
