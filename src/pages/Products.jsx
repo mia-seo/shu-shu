@@ -12,7 +12,7 @@ export default function Products() {
   if (isLoading) return <h2>Loading...💫</h2>;
   if (error) return <p>{error}</p>;
   return (
-    <section className="grid grid-cols-1 place-content-center gap-5 px-5 sm:grid-cols-2 md:grid-cols-3 py-8">
+    <section className="grid grid-cols-1 place-content-center gap-5 px-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-8">
       {products &&
         products.map((product) => (
           <ProductCard key={product.id} product={product} />
