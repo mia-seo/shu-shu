@@ -6,5 +6,5 @@ module.exports = {
       colors: { brand: "#5C8984" },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

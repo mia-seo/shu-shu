@@ -1,16 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../api/database";
 import ProductCard from "../components/ProductCard";
+import { useProducts } from "../hooks/useProducts";
 
 export default function Products() {
   const { category } = useParams();
   const {
-    isLoading,
-    error,
-    data: products,
-  } = useQuery(["products", category], () => getProducts(category));
+    getProductsQuery: { isLoading, error, data: products },
+  } = useProducts(category);
 
   if (isLoading) return <h2>Loading...💫</h2>;
   if (error) return <p>{error}</p>;

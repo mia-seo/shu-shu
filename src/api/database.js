@@ -3,7 +3,13 @@ import { database } from "../config/firebase";
 import { v4 as uuid } from "uuid";
 
 export async function setNewProduct(product) {
-  return set(ref(database, `products/${uuid()}`), product).catch(console.error);
+  const id = uuid();
+  const newProduct = {
+    ...product,
+    id,
+    size: product.size.includes(",") ? product.size.split(",") : [product.size],
+  };
+  return set(ref(database, `products/${id}`), newProduct).catch(console.error);
 }
 
 export async function getProducts(category) {
