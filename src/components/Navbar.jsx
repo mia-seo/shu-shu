@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsFillCartFill, BsPencilFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useUser } from "../context/userContext";
+import { useCarts } from "../hooks/useCarts";
 import Button from "./ui/Button";
 import User from "./User";
 
 export default function Navbar() {
   const { user, signin, signout } = useUser();
   const [clicked, setClicked] = useState("products");
+  const {
+    getCartsQuery: { data },
+  } = useCarts();
 
   const handleClick = (name) => setClicked(name);
 
@@ -35,13 +39,18 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-5 text-xl">
+        <div className="flex items-center gap-5 text-2xl">
           {user && (
             <Link
               className="hover:text-brand transition-all duration-150"
               to="/carts"
             >
-              <BsFillCartFill />
+              <div className="relative">
+                <p className="w-5 h-5 absolute -top-2 -right-2 bg-brand rounded-full text-white text-sm text-center font-semibold">
+                  {data ? data.length : 0}
+                </p>
+                <BsFillCartFill />
+              </div>
             </Link>
           )}
           {user && user.isAdmin && (

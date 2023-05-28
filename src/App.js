@@ -9,8 +9,8 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <UserProvider>
-      <Navbar />
       <QueryClientProvider client={queryClient}>
+        <Navbar />
         <Outlet />
       </QueryClientProvider>
     </UserProvider>
