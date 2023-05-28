@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import CartItem from "../components/CartItem";
 import Counter from "../components/Counter";
-import { useUser } from "../context/userContext";
 import { useCarts } from "../hooks/useCarts";
 
 export default function Carts() {
-  const { uid } = useUser();
   const {
     getCartsQuery: { isLoading, error, data: products },
-  } = useCarts(uid);
+  } = useCarts();
 
   const [total, setTotal] = useState(
     products && products.map((el) => el.price).reduce((a, b) => a + b)
@@ -35,7 +33,6 @@ export default function Carts() {
             <CartItem
               key={product.id}
               product={product}
-              uid={uid}
               onChange={changeTotal}
             />
           ))}

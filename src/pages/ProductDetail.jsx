@@ -9,7 +9,7 @@ export default function ProductDetail() {
   const [isAdding, setIsAdding] = useState(false);
   const [success, setSuccess] = useState();
   const { uid } = useUser();
-  const { setCart } = useCarts(uid);
+  const { setCart } = useCarts();
 
   const [selected, setSelected] = useState(product && product.size[0]);
   const handleChange = (e) => setSelected(e.target.value);

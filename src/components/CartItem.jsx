@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
-import { deleteItem } from "../api/database";
 import { useCarts } from "../hooks/useCarts";
 
 export default function CartItem({
   product,
   product: { id, imgUrl, productName, price, size },
-  uid,
   onChange,
 }) {
   const [count, setCount] = useState(1);
-  const { removeCart } = useCarts(uid);
+  const { removeCart } = useCarts();
 
   const changeCount = (sign) => {
     if (sign === "-") {

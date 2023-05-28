@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { setNewProduct } from "../api/database";
 import { uploadCloudinary } from "../api/uploadCloudinary";
 import Button from "../components/ui/Button";
 import { useProducts } from "../hooks/useProducts";
