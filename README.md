@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Shu-Shu
+Firebase 서버로 쇼핑몰사이트 만들기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 기술 스텍 ⚙️
+- React.js
+- React-Query
+- tailwindcss
+- daisyui
+- Githum]b
 
-## Available Scripts
+### 실행 방법 ✨
+```
+$ yarn install
+$ yarn start
+```
 
-In the project directory, you can run:
+### 구현 사항 🔥
+- <a href="https://github.com/mia-seo/shu-shu/pull/2" target="_blank">Navbar & 구글로그인 & 경로보호</a>
+- <a href="https://github.com/mia-seo/shu-shu/pull/3" target="_blank">NewProducts</a>
+- <a href="https://github.com/mia-seo/shu-shu/pull/4" target="_blank">Home</a>
+- <a href="https://github.com/mia-seo/shu-shu/pull/5" target="_blank">ProductDetail</a>
+- <a href="https://github.com/mia-seo/shu-shu/pull/7" target="_blank">Cart</a>
+- <a href="https://github.com/mia-seo/shu-shu/pull/8" target="_blank">리펙토링</a>
 
-### `yarn start`
+### 배포 🌱
+- <a href="https://shiny-donut-cafced.netlify.app/" target="_blank">Shu-Shu</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 블로그
+- <a href="https://velog.io/@mia/Firebase%EB%A1%9C-%EA%B5%AC%EA%B8%80-%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%95%98%EA%B8%B0" target="_blank">구글 로그인하기</a>
+- <a href="https://velog.io/@mia/React-Router-%EC%9C%A0%EC%A0%80%EC%9D%98-%EC%83%81%ED%83%9C%EC%97%90-%EB%94%B0%EB%9D%BC-%EA%B2%BD%EB%A1%9C-%EB%B3%B4%ED%98%B8%ED%95%98%EA%B8%B0" target="_blank">유저 상태에 따라 경로 보호하기</a>
+- <a href="https://velog.io/@mia/Cloudinary-client-side-upload" target="_blank">client-side upload</a>
+- <a href="https://velog.io/@mia/Firebase-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B2%A0%EC%9D%B4%EC%8A%A4-Realtime-database" target="_blank">실시간 데이터 베이스</a>
+- <a href="https://velog.io/@mia/React-Query-staleTime%EA%B3%BC-mutation" target="_blank">staleTime과 mutation</a>
