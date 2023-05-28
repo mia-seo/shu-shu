@@ -4,7 +4,7 @@ import { FaEquals, FaPlus } from "react-icons/fa";
 export default function Counter({ price }) {
   const SHIPPING = 3000;
   return (
-    <article className="w-full grid grid-cols-8 py-8 place-items-center dark:text-zinc-800">
+    <article className="w-full grid grid-cols-8 py-8 place-items-center">
       <div className="h-[150px] w-[200px] col-span-2 flex flex-col items-center justify-center bg-zinc-100 gap-2">
         <p className="text-lg font-bold">총 상품 가격</p>
         {price && <p>{`₩${price.toLocaleString()}`}</p>}
