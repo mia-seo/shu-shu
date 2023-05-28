@@ -12,7 +12,7 @@ export default function ProductCard({
   };
   return (
     <article
-      className="border border-zinc-300 rounded-xl overflow-hidden p-5 shadow-lg hover:scale-105 transition-all duration-500"
+      className="border border-zinc-300 rounded-xl overflow-hidden p-5 shadow-lg hover:scale-105 transition-all duration-500 dark:bg-zinc-200 dark:text-zinc-800"
       onClick={handleClick}
     >
       <img className="aspect-[5/6] rounded-xl" src={imgUrl} alt={productName} />
