@@ -14,6 +14,10 @@ export default function ProductDetail() {
   const [selected, setSelected] = useState(product && product.size[0]);
   const handleChange = (e) => setSelected(e.target.value);
   const handleClick = () => {
+    if (!uid) {
+      alert("로그인이 필요합니다!");
+      return;
+    }
     setIsAdding(true);
     const selectedProduct = { ...product, size: selected };
     setCart.mutate(
