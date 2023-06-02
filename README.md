@@ -14,7 +14,8 @@ $ yarn install
 $ yarn start
 ```
 
-### 구현 사항 🔥
+### 구현 사항
+<img width="300px" height="250px" src="https://github.com/mia-seo/shu-shu/assets/117281717/b38bd028-1584-4b57-9d6f-306d0b1acb30"> <br>
 - <a href="https://github.com/mia-seo/shu-shu/pull/2" target="_blank">Navbar & 구글로그인 & 경로보호</a>
 - <a href="https://github.com/mia-seo/shu-shu/pull/3" target="_blank">NewProducts</a>
 - <a href="https://github.com/mia-seo/shu-shu/pull/4" target="_blank">Home</a>
